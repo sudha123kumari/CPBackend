@@ -10,8 +10,8 @@ exports.Register = async (req, res) => {
     host: "smtp.gmail.com",
     port: 587,
     auth: {
-      user: "sravzyasudha512000@gmail.com",
-      pass: "Sonam@878928",
+      user: "realmesupprt2027@gmail.com",
+      pass: "Sonam@123",
     },
   });
 
@@ -32,7 +32,7 @@ exports.Register = async (req, res) => {
               console.log("data updated");
 
               const mailOptions = {
-                from: "sravzyasudha512000@gmail.com",
+                from: "realmesupprt2027@gmail.com",
                 to: email,
                 subject: "Updated request for realme 5 ",
                 html: `
@@ -62,7 +62,7 @@ exports.Register = async (req, res) => {
               return res.status(400).json({ error: err });
             } else {
               const mailOptions = {
-                from: "sravzyasudha512000@gmail.com",
+                from: "realmesupprt2027@gmail.com",
                 to: email,
                 subject: "Request made for for realme 5",
                 html: `
