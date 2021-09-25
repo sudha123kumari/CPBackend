@@ -42,7 +42,7 @@ exports.Register = async (req, res) => {
                 from: `${process.env.EMAIL_ID}`,
                 to: `${email}`,
                 subject: "Updated request for realme 5 ",
-                text: `
+                html: `
                 <h2>Hello, you have  updated request for realme 5, Specification included ${storage}, ${ram} </h2>
                 <p> your Registration no. is <strong>${user.pid}</strong></p>`,
               };
@@ -72,7 +72,7 @@ exports.Register = async (req, res) => {
                 from: `${process.env.EMAIL_ID}`,
                 to: `${email}`,
                 subject: "Request made for for realme 5",
-                text: `<h2>Hello, you have made a new request for realme 5, Specification included ${storage} internal Storage, ${ram} RAM </h2>
+                html: `<h2>Hello, you have made a new request for realme 5, Specification included ${storage} internal Storage, ${ram} RAM </h2>
                     <p>Registration no. <strong>${user.pid}</strong></p>`,
               };
 
