@@ -43,7 +43,7 @@ exports.Register = async (req, res) => {
                 to: `${email}`,
                 subject: "Updated request for realme 5 ",
                 html: `
-                <h2>Hello, you have  updated request for realme 5, Specification included ${storage}, ${ram} </h2>
+                <h2>Hello, you have  updated request for realme 5, Specification included ${storage} internal Storage, ${ram} RAM </h2>
                 <p> your Registration no. is <strong>${user.pid}</strong></p>`,
               };
 
