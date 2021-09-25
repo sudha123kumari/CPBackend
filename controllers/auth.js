@@ -55,8 +55,8 @@ exports.Register = async (req, res) => {
             }
           });
         } else {
-          let newUser = new User({ email, storage, ram, pid });
-          await newUser.save((err, success) => {
+          let user = new User({ email, storage, ram, pid });
+          await user.save((err, success) => {
             if (err) {
               console.log("error occured in while creating new user.");
               return res.status(400).json({ error: err });
@@ -68,7 +68,7 @@ exports.Register = async (req, res) => {
                 html: `
               
                     <h2>Hello, you have made a new request for realme 5, Specification included ${storage} internal Storage, ${ram} RAM </h2>
-                    <p>Registration no. <strong>${newUser.pid}</strong></p>`,
+                    <p>Registration no. <strong>${user.pid}</strong></p>`,
               };
 
               transporter.sendMail(mailOptions, function (error, info) {
@@ -83,7 +83,7 @@ exports.Register = async (req, res) => {
               });
 
               console.log("successfully created the user");
-              return res.status(200).json({ newUser });
+              return res.status(200).json({ user });
             }
           });
         }
