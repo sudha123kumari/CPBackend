@@ -14,6 +14,13 @@ exports.Register = async (req, res) => {
       pass: `${process.env.PASSWORD}`,
     },
   });
+  transporter.verify((error, success) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Server is ready to take messages");
+    }
+  });
 
   User.find().exec((err, user) => {
     if (user) {
@@ -33,9 +40,9 @@ exports.Register = async (req, res) => {
 
               const mailOptions = {
                 from: `${process.env.EMAIL_ID}`,
-                to: email,
+                to: `${email}`,
                 subject: "Updated request for realme 5 ",
-                html: `
+                text: `
                 <h2>Hello, you have  updated request for realme 5, Specification included ${storage}, ${ram} </h2>
                 <p> your Registration no. is <strong>${user.pid}</strong></p>`,
               };
@@ -63,11 +70,9 @@ exports.Register = async (req, res) => {
             } else {
               const mailOptions = {
                 from: `${process.env.EMAIL_ID}`,
-                to: email,
+                to: `${email}`,
                 subject: "Request made for for realme 5",
-                html: `
-              
-                    <h2>Hello, you have made a new request for realme 5, Specification included ${storage} internal Storage, ${ram} RAM </h2>
+                text: `<h2>Hello, you have made a new request for realme 5, Specification included ${storage} internal Storage, ${ram} RAM </h2>
                     <p>Registration no. <strong>${user.pid}</strong></p>`,
               };
 
