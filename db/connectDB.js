@@ -2,7 +2,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 mongoose
   .connect(
-    `mongodb+srv://singhtushar:${process.env.DB_PASSWORD}@registerapi.fgpov.mongodb.net/kart`,
+    `mongodb+srv://singhtushar:${process.env.DB_PASSWORD}@registerapi.fgpov.mongodb.net/CpTracker`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
