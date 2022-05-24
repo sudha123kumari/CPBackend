@@ -8,19 +8,18 @@ const userSchema = new mongoose.Schema(
       required: true,
       lowercase: true,
     },
-    storage: {
+   name: {
       type: String,
       required: true,
     },
-    ram: {
-      type: String,
-      required: true,
-    },
-    pid: {
-      type: Number,
-      required: true,
-    },
+    data : [new mongoose.Schema({
+     contestName: {type: String},
+      startTime : {type: String},
+      link:{type:String},   
+  }, {strict: false})
+  ]
   },
+  {strict: false},
   {
     timestamps: true,
   }
